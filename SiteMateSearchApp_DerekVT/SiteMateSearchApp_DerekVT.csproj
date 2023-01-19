@@ -10,6 +10,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+        <PackageReference Include="Refit" Version="6.3.2" />
         <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     </ItemGroup>
 
@@ -18,5 +20,12 @@
       <EmbeddedResource Include="Images\18-07-05-Sitemate-Logo-v1-01.png" />
       <None Remove="Images\sitemate-swirl-branding.svg.png" />
       <EmbeddedResource Include="Images\sitemate-swirl-branding.svg.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="SearchPage.xaml.cs">
+        <DependentUpon>SearchPage.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
     </ItemGroup>
 </Project>

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ir="clr-namespace:SiteMateSearchApp_DerekVT.Helpers"
+             xmlns:models="clr-namespace:SiteMateSearchApp_DerekVT.Models;assembly=SiteMateSearchApp_DerekVT"
+             xmlns:local="clr-namespace:SiteMateSearchApp_DerekVT;assembly=SiteMateSearchApp_DerekVT"
+             x:Class="SiteMateSearchApp_DerekVT.SearchPage"
+             x:DataType="models:NewsAPISearch">
+
+    <StackLayout VerticalOptions="FillAndExpand">
+        
+        <!-- Main SiteMate logo, taken from the website, using a hi-res PNG -->
+        <Image 
+            Source="{ir:ImageResourceXAML SiteMateSearchApp_DerekVT.Images.18-07-05-Sitemate-Logo-v1-01.png}"
+            Margin="32,16,32,0"
+            HeightRequest="64"/>
+        
+        <Label 
+            Style="{StaticResource LabelStyleH1}"
+            Text="Search NewsAPI" 
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            Margin="0,16,0,0"/>
+        
+        <Entry 
+            x:Name="EntrySearchPhrase"
+            Placeholder="Enter your search phrase here..."
+            Margin="16"/>
+        
+        <ScrollView VerticalOptions="FillAndExpand">
+            <CollectionView 
+                x:Name="NewsArticlesListView"
+                ItemsSource="{Binding articles}"
+                SelectionMode="None"
+                VerticalOptions="FillAndExpand">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="16"></LinearItemsLayout>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="Blue" CornerRadius="8">
+                                <StackLayout Padding="10" x:DataType="models:Article">
+                                    <Label Text="{Binding title}" 
+                                        LineBreakMode="NoWrap" 
+                                        Style="{DynamicResource ListItemTextStyle}" 
+                                        FontSize="16" />
+                                    <Label Text="{Binding author}" 
+                                        LineBreakMode="NoWrap"
+                                        Style="{DynamicResource ListItemDetailTextStyle}"
+                                        FontSize="13" />
+                                    <Label Text="{Binding content}" 
+                                       LineBreakMode="NoWrap"
+                                       Style="{DynamicResource ListItemDetailTextStyle}"
+                                       FontSize="13" />
+                                </StackLayout>
+                            </Frame>
+                            
+                        
+                            <!-- Ran out of time to add another page to view each individual article :( -->
+                            <!--<StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    NumberOfTapsRequired="1"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type local:ItemsViewModel}}, Path=ItemTapped}"		
+                                    CommandParameter="{Binding .}">
+                                </TapGestureRecognizer>
+                            </StackLayout.GestureRecognizers>-->
+                        
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+        
+        <!-- search result goes here-->
+        <Grid VerticalOptions="EndAndExpand">  <!-- This grid is used to layer the lower swirl graphic and the start button -->
+            <Grid
+                Grid.Row="0"
+                HeightRequest="256">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="64"/>
+                    <RowDefinition Height="200"/>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" 
+                       Aspect="Fill"
+                       Source="{ir:ImageResourceXAML SiteMateSearchApp_DerekVT.Images.sitemate-swirl-branding.svg.png}"
+                       Margin="0"/>
+                <BoxView Grid.Row="1"
+                         Margin="-8"
+                         BackgroundColor="#0080df" 
+                         HeightRequest="128"/>
+            </Grid>
+            <Button
+                x:Name="SearchButton"
+                Grid.Row="0"
+                Style="{StaticResource ButtonStyleInverted}"  
+                Text="Search"
+                VerticalOptions="EndAndExpand"
+                Margin="64,0,64,64"
+                Clicked="SearchButton_OnClicked"/>    
+        </Grid>
+        <!-- Swirling branded graphic taken from website too to keep branding consistent -->
+        
+    </StackLayout>
+
+</ContentPage>

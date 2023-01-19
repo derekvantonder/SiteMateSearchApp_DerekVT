@@ -13,5 +13,11 @@ namespace SiteMateSearchApp_DerekVT
 		{
 			InitializeComponent();
 		}
+
+		// NOTE: In the interest of time, we are not using a Command here as we would normally do
+		private async void StartSearchButton_OnClicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new SearchPage());
+		}
 	}
 }

@@ -53,11 +53,17 @@
                          BackgroundColor="#0080df" 
                          HeightRequest="128"/>
             </Grid>
-            <Button Grid.Row="0"
-                    Style="{StaticResource ButtonStyleInverted}"  
-                    Text="Start Search"
-                    VerticalOptions="EndAndExpand"
-                    Margin="64,0,64,64"/>    
+            
+            <!-- NOTE: In the interest of time, we are not using a Command here as we would normally do -->
+            <Button
+                x:Name="StartSearchButton"
+                Grid.Row="0"
+                Style="{StaticResource ButtonStyleInverted}"  
+                Text="Start Search"
+                VerticalOptions="EndAndExpand"
+                Margin="64,0,64,64"
+                Clicked="StartSearchButton_OnClicked"/>
+            
         </Grid>
         <!-- Swirling branded graphic taken from website too to keep branding consistent -->
         
