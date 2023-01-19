@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{FC5E825D-86C2-4541-A4E2-B5CF43A4DE51}|Default">
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.Pixel_5_API_33" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SiteMateSearchApp_DerekVT" expanded="True">
+            <Node name="SiteMateSearchApp_DerekVT" expanded="True">
+              <Node name="Images" expanded="True">
+                <Node name="18-07-05-Sitemate-Logo-v1-01.png" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.SiteMateSearchApp__DerekVT.Droid PreferredExecutionTarget="Android.Pixel_5_API_33" />
+</Properties>

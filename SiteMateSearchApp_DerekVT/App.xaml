@@ -1,8 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SiteMateSearchApp_DerekVT.App">
+             x:Class="SiteMateSearchApp_DerekVT.App"
+             x:Name="Application">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="LabelStyleH1">
+                <Setter Property="FontSize" Value="28" />
+                <Setter Property="TextColor" Value="#2d82db" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            <Style TargetType="Label" x:Key="LabelStyleH2">
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="TextColor" Value="#6d859e" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            <Style TargetType="Label" x:Key="LabelStyleParagraph">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="TextColor" Value="#6d859e" />
+            </Style>
+            <Style TargetType="Button" x:Key="ButtonStyle">
+                <Setter Property="BackgroundColor" Value="#2d82db" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BorderRadius" Value="16" />
+                <Setter Property="FontSize" Value="18" />
+            </Style>
+            <Style TargetType="Button" x:Key="ButtonStyleInverted">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="TextColor" Value="#2d82db" />
+                <Setter Property="BorderRadius" Value="16" />
+                <Setter Property="FontSize" Value="18" />
+            </Style>
+        </ResourceDictionary>      
     </Application.Resources>
 </Application>

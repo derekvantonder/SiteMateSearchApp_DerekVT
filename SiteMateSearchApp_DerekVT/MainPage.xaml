@@ -2,13 +2,65 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:SiteMateSearchApp_DerekVT"
+             xmlns:ir="clr-namespace:SiteMateSearchApp_DerekVT.Helpers"
              x:Class="SiteMateSearchApp_DerekVT.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <StackLayout VerticalOptions="FillAndExpand">
+        <Label 
+            HeightRequest="64"/>    <!-- Create a gap at the top of the screen -->
+        
+        <!-- Main SiteMate logo, taken from the website, using a hi-res PNG -->
+        <Image 
+            Source="{ir:ImageResourceXAML SiteMateSearchApp_DerekVT.Images.18-07-05-Sitemate-Logo-v1-01.png}"
+            Margin="32"
+            HeightRequest="128"/>
+        
+        <Label 
+            Style="{StaticResource LabelStyleH1}"
+            Text="Q123 Mobile Engineer" 
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            Margin="0,64,0,0"/>
+        
+        <Label 
+            Style="{StaticResource LabelStyleH2}"
+            Text="Lead Quiz" 
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            Margin="0,0,0,0"/>
+        
+        <Label 
+            Style="{StaticResource LabelStyleParagraph}"
+            Text="The purpose of this application is to demonstrate creation of a simple mobile app that calls an API with user input, and then displays the results." 
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            Margin="32,16,32,0"/>
+        
+        <Grid VerticalOptions="EndAndExpand">  <!-- This grid is used to layer the lower swirl graphic and the start button -->
+            <Grid
+                Grid.Row="0"
+                HeightRequest="256">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="64"/>
+                    <RowDefinition Height="200"/>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" 
+                       Aspect="Fill"
+                       Source="{ir:ImageResourceXAML SiteMateSearchApp_DerekVT.Images.sitemate-swirl-branding.svg.png}"
+                       Margin="0"/>
+                <BoxView Grid.Row="1"
+                         Margin="-8"
+                         BackgroundColor="#0080df" 
+                         HeightRequest="128"/>
+            </Grid>
+            <Button Grid.Row="0"
+                    Style="{StaticResource ButtonStyleInverted}"  
+                    Text="Start Search"
+                    VerticalOptions="EndAndExpand"
+                    Margin="64,0,64,64"/>    
+        </Grid>
+        <!-- Swirling branded graphic taken from website too to keep branding consistent -->
+        
     </StackLayout>
 
 </ContentPage>
